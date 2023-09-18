@@ -7,7 +7,7 @@
         <configVersion>2</configVersion>
         <userRemoteConfigs>
             <hudson.plugins.git.UserRemoteConfig>
-                <url>{{ item.repo_name}}</url>
+                <url>{{item.repo_name}}</url>
             </hudson.plugins.git.UserRemoteConfig>
         </userRemoteConfigs>
         <branches>
