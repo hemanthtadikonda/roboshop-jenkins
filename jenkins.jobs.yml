@@ -1,0 +1,9 @@
+-  name: Create Pipeline Jobs
+   hosts: all
+   become: true
+   roles:
+     - jenkins
+
+
+   vars:
+     - folders:
