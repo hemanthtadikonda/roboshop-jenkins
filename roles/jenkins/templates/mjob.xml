@@ -1,0 +1,35 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<matrix-project plugin="matrix-project@808.v5a_b_5f56d6966">
+    <description></description>
+    <keepDependencies>false</keepDependencies>
+    <properties/>
+    <scm class="hudson.plugins.git.GitSCM" plugin="git@5.2.0">
+        <configVersion>2</configVersion>
+        <userRemoteConfigs>
+            <hudson.plugins.git.UserRemoteConfig>
+                <url>https://github.com/hemanthtadikonda/roboshop-jenkins.git</url>
+            </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches>
+            <hudson.plugins.git.BranchSpec>
+                <name>*/main</name>
+            </hudson.plugins.git.BranchSpec>
+        </branches>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <submoduleCfg class="empty-list"/>
+        <extensions/>
+    </scm>
+    <canRoam>true</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers/>
+    <concurrentBuild>false</concurrentBuild>
+    <axes/>
+    <builders/>
+    <publishers/>
+    <buildWrappers/>
+    <executionStrategy class="hudson.matrix.DefaultMatrixExecutionStrategyImpl">
+        <runSequentially>false</runSequentially>
+    </executionStrategy>
+</matrix-project>
