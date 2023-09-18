@@ -1,6 +1,6 @@
 -  name: Copy config file {{ item.folder_name}}
    ansible.builtin.template:
-     file: folder.xml
+     src: folder.xml
      dest: /tmp/folder.xml
 
 -  name: Create {{ item.folder_name}}
