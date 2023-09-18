@@ -1,0 +1,4 @@
+-  name: Create Folders
+   ansible.builtin.include_tasks:
+     file: folder.yml
+   loop: "{{ folders}}"

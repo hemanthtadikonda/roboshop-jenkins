@@ -6,4 +6,6 @@
 
 
    vars:
-     - folders:
+    folders:
+      - { folder_name: "CI Pipelines"}
+      - { folder_name: "Infra-Jobs"  }
