@@ -1,5 +1,5 @@
 -  name: Create Pipeline Jobs
-   hosts: all
+   hosts: localhost
    become: true
    roles:
      - jenkins
