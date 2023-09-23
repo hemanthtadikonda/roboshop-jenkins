@@ -62,7 +62,7 @@ def call() {
                 //}
                 steps {
                     // sh 'upload artifact to nexus command
-                    print 'Ok ok'
+                    print 'Ok-Ok'
                 }
 
             }
