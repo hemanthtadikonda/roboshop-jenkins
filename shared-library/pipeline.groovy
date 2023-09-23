@@ -53,7 +53,7 @@ def call () {
                 }
             }
 
-            stage ('Realse') {
+            stage ('Realse APP') {
                 when {
                     expression {env.TAG_NAME ==~ ".*"}
                 }
