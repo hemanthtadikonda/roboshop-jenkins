@@ -57,6 +57,9 @@ def call() {
                 when {
                     expression {env.TAG_NAME ==~ ".*"}
                 }
+                //parameters {
+                //    password(name: 'NEXUS.PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+                //}
                 steps {
                     // sh 'upload artifact to nexus command
                     print 'Ok'
