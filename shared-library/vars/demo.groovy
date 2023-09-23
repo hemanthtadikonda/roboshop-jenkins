@@ -53,7 +53,7 @@ def call() {
                 }
             }
 
-            stage ('Release ') {
+            stage ('Release App') {
                 when {
                     expression {env.TAG_NAME ==~ ".*"}
                 }
