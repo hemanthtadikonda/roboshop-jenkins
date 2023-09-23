@@ -13,7 +13,10 @@ def call() {
 
             stage('Test cases') {
                 when  {
-                    expression { env.TAG_NAME != null}
+                    allOf {
+                        expression { env.BRANCH_NAME != null }
+                        expression { env.TAG_NAME == null }
+                    }
                 }
                 steps {
                     // depends upon component type
