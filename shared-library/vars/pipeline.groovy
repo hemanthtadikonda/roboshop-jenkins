@@ -1,69 +1,60 @@
-def call () {
+def call() {
     pipeline {
         agent any
 
         stages {
-            stage('code compile') {
+            stage('Compile Code') {
                 steps {
                     sh 'env'
-                    // depends upon component type
-                    print 'OK'
                 }
             }
 
-            stage('Test cases') {
-                when  {
-                    expression { env.TAG_NAME != null}
-                }
-                steps {
-                    // depends upon component type
-                    print 'OK'
-                }
-            }
-
-            stage ('code quality') {
+            stage('Test') {
                 when {
                     allOf {
                         expression { env.BRANCH_NAME != null }
                         expression { env.TAG_NAME == null }
                     }
+
                 }
-                //parameters {
-                //    password(name: 'SONAR.PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
-                //}
                 steps {
-                    //sh 'sonar scan command depends code type'
-                    print 'OK'
+                    echo 'Hello World'
                 }
             }
 
-            stage ('code security') {
+            stage('Code Quality') {
                 when {
                     allOf {
-                        expression { env.BRANCH_NAME == "main"}
-                        expression { env.TAG_NAME    == null}
+                        expression { env.BRANCH_NAME != null }
+                        expression { env.TAG_NAME == null }
                     }
+
                 }
-                //parameters {
-                //    password(name: 'SONAR.PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
-                //}
                 steps {
-                    //sh 'checkmarx sast sca'
-                    print 'OK'
+                    echo 'Hello World'
                 }
             }
 
-            stage ('Realse APP') {
+            stage('Code Security') {
                 when {
-                    expression {env.TAG_NAME ==~ ".*"}
+                    expression { BRANCH_NAME == "main" }
+                }
+
+                steps {
+                    echo 'Hello World'
+                }
+            }
+
+            stage('Release') {
+                when {
+                    expression { env.TAG_NAME ==~ ".*" }
                 }
                 steps {
-                    // sh 'upload artifact to nexus command
-                    print 'OK NOOO'
+                    sh 'env'
+                    echo 'Hello World'
                 }
-
             }
-        }
 
+        }
     }
 }
