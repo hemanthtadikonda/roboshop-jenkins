@@ -4,7 +4,7 @@ def compile() {
          return "Return, No need of compilation"
       }
       if(env.codeType == "maven") {
-         sh '/home/centos/maven/bin/mvn package'
+         sh '/root/maven/bin/mvn package'
       }
       if(env.codeType == "nodejs"){
          sh 'npm install'
@@ -15,7 +15,7 @@ def compile() {
 def test() {
    stage('test cases'){
       if(env.codeType == "maven"){
-         sh '/home/centos/maven/bin/mvn test'
+         sh '/root/maven/bin/mvn test'
       }
       if(env.codeType == "nodejs"){
          sh 'npm test'
@@ -28,13 +28,13 @@ def test() {
 
 def codequality(){
    stage('code quality'){
-
       if(env.codeType == "maven"){
          sh 'sonar command'
-      }else{
+      } else {
          sh 'sonar command'
       }
    }
+   
 }
 
 def codesecurity(){
