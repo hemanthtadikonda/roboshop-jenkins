@@ -28,7 +28,8 @@ def test() {
 
 def codequality(){
    stage('code quality'){
-       if(env.codeType == "maven"){
+
+      if(env.codeType == "maven"){
          sh 'sonar command'
       }else {
          sh 'sonar command'
