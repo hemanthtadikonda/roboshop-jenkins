@@ -4,7 +4,7 @@ def compile() {
    }
    stage('compile'){
       if(env.codeType == "maven") {
-         sh '/home/centos/maven/bin package'
+         sh '/home/centos/maven/bin/mvn package'
       }
       if(env.codeType == "nodejs"){
          sh 'npm install'
