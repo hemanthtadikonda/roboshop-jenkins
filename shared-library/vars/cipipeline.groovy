@@ -11,18 +11,21 @@ def call(){
               userRemoteConfigs: [[url: "https://github.com/hemanthtadikonda/${component}"]]
       )
 
-      if (env.BRANCH_NAME == "main") {
-         common.compile()
-         common.test()
-         common.codequality()
-         common.codesecurity()
-      } else {
-         common.compile()
-         common.test()
-      }
-      if (env.TAG_NAME ==~ ".*") {
+      if(env.TAG_NAME ==~ ".*") {
          common.compile()
          common.release()
+      } else {
+         if(env.BRANCH_NAME == "main") {
+            common.compile()
+            common.test()
+            common.codeQuality()
+            common.codeSecurity()
+         } else {
+            common.compile()
+            common.test()
+            common.codeQuality()
+         }
       }
+
    }
 }
