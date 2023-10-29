@@ -50,10 +50,11 @@ def codesecurity(){
 
 def release(){
    stage('Release') {
-      sh 'echo ${TAG_NAME} >VERSION'
-      aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 043254050286.dkr.ecr.us-east-1.amazonaws.com
-      docker build -t 043254050286.dkr.ecr.us-east-1.amazonaws.com/{componet}:VERSION .
-      docker push 043254050286.dkr.ecr.us-east-1.amazonaws.com/{componet}:VERSION
+      sh '''
+   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 043254050286.dkr.ecr.us-east-1.amazonaws.com
+   docker build -t 043254050286.dkr.ecr.us-east-1.amazonaws.com/${component}:${TAG_NAME} .
+   docker push 043254050286.dkr.ecr.us-east-1.amazonaws.com/${component}:${TAG_NAME}
+'''
    }
 }
 
