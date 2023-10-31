@@ -21,3 +21,4 @@
 
     sjobs:
       - { job_name: "roboshop-terraform" , repo_name: "https://github.com/hemanthtadikonda/roboshop-terraform.git" , folder_name: "Infra-Jobs" }
+      - { job_name: "Helm Deployment" , repo_name: "https://github.com/hemanthtadikonda/roboshop-helm.git" , folder_name: "Infra-Jobs" }
